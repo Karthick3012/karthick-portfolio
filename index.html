@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karthick | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Introduction -->
+  <section class="intro" id="home">
+  <img src="karthick photo.jpg" alt="My Photo" class="profile-img">
+  <h1>Karthick R</h1>
+  <p>Data Analyst | Data Science Enthusiast</p>
+  <p>Analytical and results-driven Data Analyst with proven expertise in statistical analysis, data visualization, and machine learning. Skilled at transforming complex data into impactful solutions using Power BI, Tableau, Python, R, SQL, and Excel.</p>
+  <p>📧 <a href="mailto:karthickraman519@gmail.com">karthickraman519@gmail.com</a> | 📱 9585562883 | <a href="https://linkedin.com/in/karthick-r-raman" target="_blank">LinkedIn</a></p>
+</section>
+
+
+ 
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills"> 
+  <h2>Skills</h2>
+  <div class="skill-icons">
+
+    <div class="skill-item">
+      <i class="fab fa-python"></i>
+      <span>Python</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fas fa-database"></i>
+      <span>SQL</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fas fa-table"></i>
+      <span>Excel</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fas fa-robot"></i>
+      <span>Machine Learning</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fas fa-brain"></i>
+      <span>AI</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fas fa-chart-pie"></i>
+      <span>Power BI</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fas fa-chart-line"></i>
+      <span>Tableau</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fas fa-chart-area"></i>
+      <span>Data Visualization</span>
+    </div>
+
+  </div>
+</section>
+
+
+
+    
+
+<section class="education">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>BCA</strong> – Rabindranath Tagore University (2022 – 2025)</li>
+    <li><strong>Diploma</strong> – Madras Medical College (2019 – 2022)</li>
+    <li><strong>Certification</strong> – Data Science (Simplilearn)</li>
+  </ul>
+</section>
+
+
+  </section>
+
+  <!-- Resume Section -->
+  <section class="resume" id="resume">
+  <h2>Resume</h2>
+  <a href="karthick.r.pdf" class="button" download>📄 Download My Resume</a>
+  <p>Want a quick overview? <a href="#skills">Check my skills</a> or <a href="#projects">see my projects</a>.</p>
+</section>
+
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+  <h2>Contact Me</h2>
+  <p>📧 <a href="mailto:karthickraman519@gmail.com">karthickraman519@gmail.com</a></p>
+  <p>🔗 <a href="https://linkedin.com/in/karthick-r-raman" target="_blank">LinkedIn Profile</a></p>
+</section>
+
+
+
+<section class="projects" id="projects">style="background-color:#f0f4f8; padding: 20px; border-radius: 8px;">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<p><i class="fas fa-download"></i> <a href="karthick.r.pdf">Download Resume</a></p>
+
+<section class="github-projects">
+  <h2>GitHub Projects</h2>
+  <div id="github-list">
+    <p>Loading projects...</p>
+  </div>
+</section>
+
+
+<script>
+  const username = "Karthick3012"; // 👉 replace with your GitHub username
+  const apiUrl = `https://api.github.com/users/${username}/repos`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const githubList = document.getElementById("github-list");
+      githubList.innerHTML = ""; // Clear "Loading..."
+
+      data.forEach(repo => {
+        if (!repo.fork) {
+          const project = document.createElement("div");
+          project.className = "project";
+          project.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description provided."}</p>
+            <a href="${repo.html_url}" target="_blank">🔗 View on GitHub</a>
+          `;
+          githubList.appendChild(project);
+        }
+      });
+    }) 
+    .catch(error => {
+      document.getElementById("github-list").innerHTML = "Error loading GitHub data.";
+      console.error("Error fetching GitHub repos:", error);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
